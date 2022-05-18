@@ -1,0 +1,117 @@
+.main
+    width: 100%
+    display: flex
+    flex: 1
+    .people__list
+        width: 200px
+        background-color: #6A6C75
+        max-height: calc( 100vh - 150px)
+        overflow-y: scroll
+        ul
+            padding: 2px
+            li
+                margin-top: 10px
+                padding-bottom: 20px
+        &-name
+            font-size: 15px
+        &-about
+            margin-top: 8px
+        &-status
+            font-size: 12px
+            color: $gray
+
+    .chat
+        flex-grow: 1
+        background: #F2F5F8
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+        overflow-y: scroll
+        max-height: calc( 100vh - 150px)
+        color: #434651
+        &__header
+            padding: 20px
+            border-bottom: 2px solid white
+            img
+                height: 50px
+                width: 50px
+        &__about
+            float: left
+            padding-left: 10px
+            margin-top: 6px
+
+        &-with
+            font-weight: bold
+            font-size: 16px
+
+        &-count-messages
+            color: $gray
+
+        &__history
+            padding: 30px 30px 20px
+            border-bottom: 2px solid white
+            overflow-y: scroll
+
+            .message__data
+                margin-bottom: 15px
+
+                &-time
+                    color: lighten($gray, 8%)
+                    padding-left: 6px
+
+    .message
+        color: white
+        padding: 18px 20px
+        line-height: 26px
+        font-size: 16px
+        border-radius: 7px
+        margin-bottom: 30px
+        width: 90%
+        position: relative
+        &:after
+            bottom: 100%
+            left: 7%
+            border: solid transparent
+            content: " "
+            height: 0
+            width: 0
+            position: absolute
+            pointer-events: none
+            border-bottom-color: $green
+            border-width: 10px
+            margin-left: -10px
+
+    .my-message
+        background: $green
+
+    .other-message
+        background: $blue
+
+        &:after
+            border-bottom-color: $blue
+            left: 93%
+
+    .align-left
+        text-align: left
+
+    .align-right
+        text-align: right
+
+    .float-right
+        float: right
+
+    .clear:after
+        visibility: hidden
+        display: block
+        font-size: 0
+        content: " "
+        clear: both
+        height: 0
+
+img
+    margin: 0 5px
+    float: left
+    height: 35px
+    width: 35px
+    border-radius: 100%
+ul
+    list-style-type: none
